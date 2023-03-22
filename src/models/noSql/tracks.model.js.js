@@ -8,7 +8,9 @@ const tracksSchema = new mongoose.Schema({
     album: {
         type: Number
     },
-    cover: {},
+    cover: {
+        type: String
+    },
     artist: {
         name: String,
         nickname: String,
