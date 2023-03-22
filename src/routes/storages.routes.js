@@ -3,8 +3,6 @@ import { createItem,getItems } from '../controllers/storages.controller.js'
 import { uploadMiddleware } from '../utils/handle.storage.js'
 
 
-console.log(">storage.route>", process.env.TEST);
-
 const router = express.Router()
 
 router.get('/', getItems)

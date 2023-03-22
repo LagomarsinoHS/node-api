@@ -20,7 +20,16 @@ Para instalar el proyecto debe estar parado dentro de la carpeta y ejecutar
   npm i
 ```
     
+## Dotenv
 
+Normalmente dotenv se importa en el archivo y de esta manera se puede usar en el proyecto
+
+```javascript
+import dotenv from 'dotenv'
+dotenv.config()
+```
+
+En este proyecto se definio el uso de dotenv en el script `npm run start:dev` porque no estaba llegando a todas partes del proyecto
 
 ## Deployment
 Para deployear el proyecto usar el comando
@@ -33,6 +42,11 @@ Para deployear el proyecto usar el comando
 
 Para el correcto funcionamiento del proyecto, en el .env debes tener las siguientes variables de entorno
 
-`DB_NAME`
+`DB_NAME` -> api-node
+
 `MONGO_URI`
+
+`PORT`
+
+`PUBLIC_URL` -> http://localhost:PORT
 

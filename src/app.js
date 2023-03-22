@@ -1,12 +1,10 @@
-import dotenv from 'dotenv'
-dotenv.config()
 import express, { json } from 'express'
 import morgan from 'morgan'
 import cors from 'cors'
 import { storageRoutes, trackRoutes, userRoutes } from './routes/index.js'
 
 const app = express()
-console.log(">app.js>", process.env.TEST);
+
 // Middlewares
 app.use(morgan('dev'))
 app.use(cors())
