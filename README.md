@@ -6,6 +6,8 @@ Aplicación que contendrá:
 - Uso de Dotenv para variables de entorno
 - Uso de multer para la manipulación de archivos
 - Uso de cors para no tener problemas de cors
+- Uso de express-validator para validar los datos de ingreso a los controladores
+- Uso de mongoose-delete para poder hacer uso de soft delete (no me funcionó)
 
 
 El tutorial proviene desde [Youtube-NODE JS y Express BACKEND](https://www.youtube.com/watch?v=xRXHQlqA3Ak)
