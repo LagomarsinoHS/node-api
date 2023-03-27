@@ -20,9 +20,16 @@ const tracksSchema = new mongoose.Schema({
         start: Number,
         end: Number
     },
-    mediaId: mongoose.SchemaTypes.ObjectId
+    mediaId: mongoose.SchemaTypes.ObjectId,
+    softDeleted: {
+        type: Boolean,
+        default: false
+    }
 }, {
     timestamps: true
 })
 
+tracksSchema.statics.doSoftDelete = function (_id) {
+    return this.findByIdAndUpdate({ _id }, { softDeleted: true }, { new: true })
+}
 export default mongoose.model('tracks', tracksSchema)

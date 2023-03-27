@@ -9,4 +9,4 @@ router.post('/', validatorCreateItem, createItem)
 router.put('/:id', validatorGetItem, validatorCreateItem, updateItem)
 router.delete('/:id', validatorGetItem, deleteItem)
 
-export { router as trackRoutes }
+export { router }

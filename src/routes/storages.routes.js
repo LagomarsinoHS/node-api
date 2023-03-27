@@ -1,14 +1,16 @@
 import express from 'express'
-import { createItem,getItems } from '../controllers/storages.controller.js'
+import { createItem, getItems, getItem, updateItem, deleteItem } from '../controllers/storages.controller.js'
 import { uploadMiddleware } from '../utils/handle.storage.js'
+import { validatorGetItem } from '../validators/storages.validators.js'
 
 
 const router = express.Router()
 
 router.get('/', getItems)
-//router.get('/:id', getItem)
+router.get('/:id', validatorGetItem, getItem)
 router.post('/', uploadMiddleware.single('fileName'), createItem)
-//router.put('/', updateItem)
-//router.delete('/', deleteItem)
+router.put('/:id', updateItem)
+router.delete('/:id', validatorGetItem, deleteItem)
 
-export { router as storageRoutes }
+
+export { router }

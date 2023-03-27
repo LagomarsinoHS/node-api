@@ -10,6 +10,7 @@ const getItems = async (req, res) => {
         handleHTTPError(res, `Something happend tracks-getItems-${error}`, 400)
     }
 }
+
 const getItem = async (req, res) => {
     try {
         const { id } = matchedData(req)
@@ -21,6 +22,7 @@ const getItem = async (req, res) => {
     }
 
 }
+
 const createItem = async (req, res) => {
     try {
         const cleanBody = matchedData(req)//Esto es un metodo de express validator que limpia la data de cualquier cosa que venga que NO este definido en el check asociado
@@ -32,6 +34,7 @@ const createItem = async (req, res) => {
     }
 
 }
+
 const updateItem = async (req, res) => {
     try {
         const { id, ...body } = matchedData(req)//Esto es un metodo de express validator que limpia la data de cualquier cosa que venga que NO este definido en el check asociado como middleware de la ruta
@@ -42,12 +45,12 @@ const updateItem = async (req, res) => {
         handleHTTPError(res, `Something happend tracks-updateItem-${error}`, 400)
     }
 }
+
 const deleteItem = async (req, res) => {
     try {
         const { id } = matchedData(req)//Esto es un metodo de express validator que limpia la data de cualquier cosa que venga que NO este definido en el check asociado como middleware de la ruta
-        const result = await Track.deleteOne({ _id: id })
-
-        res.json(result)
+        const track = await Track.doSoftDelete(id) // >Metodo estatico creado para cambiar el valor del soft Delete
+        res.json(track)        
     } catch (error) {
         console.log("error", error);
         handleHTTPError(res, `Something happend tracks-updateItem-${error}`, 400)
