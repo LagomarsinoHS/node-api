@@ -8,6 +8,9 @@ Aplicación que contendrá:
 - Uso de cors para no tener problemas de cors
 - Uso de express-validator para validar los datos de ingreso a los controladores
 - Uso de mongoose-delete para poder hacer uso de soft delete (no me funcionó)
+- Autenticacion de token (JWT)
+- Autenticación de Roles
+- Protección de endpoints
 
 
 El tutorial proviene desde [Youtube-NODE JS y Express BACKEND](https://www.youtube.com/watch?v=xRXHQlqA3Ak)

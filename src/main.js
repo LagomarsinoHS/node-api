@@ -1,5 +1,12 @@
 import app from './app.js'
-import './config/mongo.js'
+
+const engineDB = process.env.ENGINE_DB;
+
+if (engineDB === 'noSQL') {
+    import('./config/mongo.js')
+} else {
+    import('./config/postgress.js')
+}
 
 //! Importante: En este proyecto se cargo dotenv EN EL SCRIPT npm run start:dev por 
 //! problemas de alcance al hacerlo dentro del archivo

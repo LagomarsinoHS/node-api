@@ -50,7 +50,7 @@ const deleteItem = async (req, res) => {
     try {
         const { id } = matchedData(req)//Esto es un metodo de express validator que limpia la data de cualquier cosa que venga que NO este definido en el check asociado como middleware de la ruta
         const track = await Track.doSoftDelete(id) // >Metodo estatico creado para cambiar el valor del soft Delete
-        res.json(track)        
+        res.json(track)
     } catch (error) {
         console.log("error", error);
         handleHTTPError(res, `Something happend tracks-updateItem-${error}`, 400)
